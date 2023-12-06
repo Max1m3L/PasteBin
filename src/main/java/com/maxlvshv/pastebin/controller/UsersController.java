@@ -25,6 +25,6 @@ public class UsersController {
 
     @GetMapping("/{nickname}/posts")
     private ResponseEntity<?> getUserPosts(@PathVariable("nickname") String nickname) {
-        return ResponseEntity.ok(userService.getUserPosts(nickname));
+        return ResponseEntity.ok(userService.getUserPosts());
     }
 }
