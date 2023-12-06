@@ -1,15 +1,18 @@
 urls:
- + POST auth/signup -- ***body:*** nickname, email, password 
- + GET auth/signin -- ***body:*** nickname, password
- + GET users / GET users/{nickname}
- + POST users/{nickname}/create -- ***body:*** title, subtitle
+ + POST 'auth/signup' -- ***body:*** nickname, email, password 
+ + POST '/users/{nickname}/create -- ***body:*** title, subtitle
+ + GET '/posts' 
+ + GET '/users' / GET '/users/{nickname}'
+ + GET 'auth/signin' -- ***body:*** nickname, password
 
 ***Plan:***
- + make GET all posts and user's posts
+ + make GET and user's posts
  + draw a new system design
  + add correct exceptions 
  + docker
  + add load balanser
+ + ceph/s3
+ + MongoDB
 
 now
 ![1](img/systemDesignV1.png)

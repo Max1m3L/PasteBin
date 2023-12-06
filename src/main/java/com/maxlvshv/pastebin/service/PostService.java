@@ -3,7 +3,6 @@ package com.maxlvshv.pastebin.service;
 import com.maxlvshv.pastebin.entity.PostEntity;
 import com.maxlvshv.pastebin.entity.UserEntity;
 import com.maxlvshv.pastebin.exceptions.UserIsNotExistException;
-import com.maxlvshv.pastebin.model.Post;
 import com.maxlvshv.pastebin.repository.PostRepo;
 import com.maxlvshv.pastebin.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +40,7 @@ public class PostService {
         }
     }
 
-    public List<Post> showAllPosts() {
-        List<PostEntity> postEntities = postRepo.findAll();
-        List<Post> posts = new ArrayList<>();
-
-        for (PostEntity el : postEntities) {
-            posts.add(Post.toModel(el));
-        }
-
-        return posts;
+    public List<Object> showAllPostsTest() {
+        return postRepo.findAllWithUsers();
     }
 }

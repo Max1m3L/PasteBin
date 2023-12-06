@@ -23,9 +23,8 @@ public class UsersController {
         return ResponseEntity.ok(userService.showOneUser(nickname));
     }
 
-//    @GetMapping("/{nickname}/posts")
-//    private ResponseEntity<?> getUserPosts(@PathVariable("nickname") String nickname) {
-//        return ResponseEntity.ok(userService.getUserPosts(nickname));
-//    }
-
+    @GetMapping("/{nickname}/posts")
+    private ResponseEntity<?> getUserPosts(@PathVariable("nickname") String nickname) {
+        return ResponseEntity.ok(userService.getUserPosts(nickname));
+    }
 }

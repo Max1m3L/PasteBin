@@ -50,6 +50,7 @@ public class UserService {
         }
         return false;
     }
+
     public boolean authorizedPassword(String password) {
         for (UserEntity el : userRepo.findAll()) {
             if (Objects.equals(el.getPassword(), password))
@@ -58,12 +59,13 @@ public class UserService {
         return false;
     }
 
-//    public List<Post> getUserPosts() {
-//        List<PostEntity> postEntities = postRepo.findAll();
-//        List<Post> posts = new ArrayList<>();
-//        for (PostEntity el : postEntities)
-//            posts.add(Post.toModel(el));
-//
-//        return posts;
-//    }
+    public List<Post> getUserPosts() {
+        List<PostEntity> postEntities = postRepo.findAll();
+        List<Post> posts = new ArrayList<>();
+        for (PostEntity el : postEntities) {
+            posts.add(Post.toModel(el));
+        }
+
+        return posts;
+    }
 }

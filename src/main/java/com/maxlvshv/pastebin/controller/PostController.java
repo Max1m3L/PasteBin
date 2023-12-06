@@ -21,11 +21,11 @@ public class PostController {
 
     @GetMapping("/posts")
     @Cacheable(key = "", value = "Posts")
-    public ResponseEntity<?> showAllPosts() {
+    public ResponseEntity<?> showAllPostsTest() {
         try {
-            return ResponseEntity.ok(postService.showAllPosts());
+            return ResponseEntity.ok(postService.showAllPostsTest());
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("can't snow u posts");
+            return ResponseEntity.badRequest().body("can't snow ur posts");
         }
     }
 
