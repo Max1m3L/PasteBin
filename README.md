@@ -6,11 +6,10 @@ urls:
 
 ***Plan:***
  + make GET all posts and user's posts
- + add redis for get all post faster
  + draw a new system design
  + add correct exceptions 
  + docker
-
+ + add load balanser
 
 now
 ![1](img/systemDesignV1.png)

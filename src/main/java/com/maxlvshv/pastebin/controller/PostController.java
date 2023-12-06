@@ -3,11 +3,14 @@ package com.maxlvshv.pastebin.controller;
 import com.maxlvshv.pastebin.entity.PostEntity;
 import com.maxlvshv.pastebin.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
+@EnableCaching
 public class PostController {
     private final PostService postService;
 
@@ -17,6 +20,7 @@ public class PostController {
     }
 
     @GetMapping("/posts")
+    @Cacheable(key = "", value = "Posts")
     public ResponseEntity<?> showAllPosts() {
         try {
             return ResponseEntity.ok(postService.showAllPosts());
@@ -35,3 +39,5 @@ public class PostController {
         }
     }
 }
+
+
