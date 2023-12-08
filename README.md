@@ -4,15 +4,18 @@ urls:
  + GET '/posts' 
  + GET '/users' / GET '/users/{nickname}'
  + GET 'auth/signin' -- ***body:*** nickname, password
+ + POST '/feedbacks/create' -- ***body:*** id, title
+ + GET '/feedbacks'
 
 ***Plan:***
+ + delete posts / delete users
  + make GET and user's posts
  + draw a new system design
- + add correct exceptions 
+ + add right exceptions 
  + docker
- + add load balanser
- + ceph/s3
- + MongoDB
+ + kafka?
+ + load balanser?
+ + ceph/s3?
 
 now
 ![1](img/systemDesignV1.png)
