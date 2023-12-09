@@ -17,15 +17,13 @@ urls:
 ***Plan:***
  + delete posts / delete users
  + make GET and user's posts
- + draw a new system design
  + add right exceptions 
  + docker
  + kafka?
  + load balanser?
  + ceph/s3?
 
-now
-![1](img/systemDesignV1.png)
+--------------------
 
-later
-![2](img/systemDesignV2.png)
+***System design***
+![1](img/systemDesign.png)
