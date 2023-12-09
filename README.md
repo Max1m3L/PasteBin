@@ -1,29 +1,41 @@
-urls:
- + POST 'auth/signup' => ***body:*** nickname, email, password (create new user)
- + 
- + POST '/users/{nickname}/create => ***body:*** title, subtitle (create new post)
- + 
- + GET '/posts' (show all posts)
- + 
- + GET '/users' (show all users) 
- + GET '/users/{nickname}' (show user's info)
- + 
- + GET 'auth/signin' => ***body:*** nickname, password (check user in system)
- + 
- + POST '/feedbacks/create' -- ***body:*** id, title (create new feedback)
- + 
- + GET '/feedbacks' (show all feedback)
+## PasteBin -  service for creating some post (like Reddit)
 
-***Plan:***
- + delete posts / delete users
- + make GET and user's posts
- + add right exceptions 
- + docker
- + kafka?
- + load balanser?
- + ceph/s3?
+### Back-end: PostgreSQL for users and post + cache, MongoDB for feedbacks
+
+--------
+
+### ***urls***
+POST '/auth/signup' => ***body:*** nickname, email, password (create new user)
+
+POST '/users/{nickname}/create => ***body:*** title, subtitle (create new post)
+
+GET '/posts' (show all posts)
+
+GET '/users' (show all users) 
+GET '/users/{nickname}' (show user's info)
+
+GET 'auth/signin' => ***body:*** nickname, password (check user in system)
+
+POST '/feedbacks/create' -- ***body:*** id, title (create new feedback)
+
+GET '/feedbacks' (show all feedback)
 
 --------------------
 
-***System design***
+### ***System design***
 ![1](img/systemDesign.png)
+
+--------------
+
+### ***Quickstart***
+```shell
+git clone https://github.com/Max1m3L/PasteBin.git
+```
+or download <https://github.com/Max1m3L/PasteBin.git>
+```text
+run PasteBinApplication
+```
+
+---------
+
+#### *p.s. later i'll add docker*
