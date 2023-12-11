@@ -32,10 +32,15 @@ GET '/feedbacks' (show all feedback)
 git clone https://github.com/Max1m3L/PasteBin.git
 ```
 or download <https://github.com/Max1m3L/PasteBin.git>
-```text
-run PasteBinApplication
+
+*then go to this directory and...*
+```shell
+mvn package
 ```
 
----------
+```shell
+docker build .
+```
+*and run docker-compose.yml*
 
-#### *p.s. later i'll add docker*
+---------
