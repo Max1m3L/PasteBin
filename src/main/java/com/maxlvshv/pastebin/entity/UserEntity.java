@@ -20,4 +20,6 @@ public class UserEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<PostEntity> posts;
+
+    private String Role;
 }

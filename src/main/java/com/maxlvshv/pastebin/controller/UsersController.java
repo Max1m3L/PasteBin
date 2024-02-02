@@ -1,19 +1,19 @@
 package com.maxlvshv.pastebin.controller;
 
 import com.maxlvshv.pastebin.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 public class UsersController {
     private final UserService userService;
 
-    public UsersController(UserService userService) {
-        this.userService = userService;
-    }
-
     @GetMapping
+    @Cacheable("users")
     public ResponseEntity<?> showAll() {
         return ResponseEntity.ok(userService.showUsers());
     }
@@ -23,8 +23,10 @@ public class UsersController {
         return ResponseEntity.ok(userService.showOneUser(nickname));
     }
 
-    @GetMapping("/{nickname}/posts")
-    private ResponseEntity<?> getUserPosts(@PathVariable("nickname") String nickname) {
-        return ResponseEntity.ok(userService.getUserPosts());
-    }
+//     I'LL DO IT LATER
+//    @GetMapping("/{nickname}/posts")
+//    public ResponseEntity<?> getUserPosts(@PathVariable("nickname") String nickname) {
+//        return ResponseEntity.ok(userService.getUserPosts());
+//    }
+
 }

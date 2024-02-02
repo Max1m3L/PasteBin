@@ -2,25 +2,19 @@ package com.maxlvshv.pastebin.controller;
 
 import com.maxlvshv.pastebin.entity.PostEntity;
 import com.maxlvshv.pastebin.service.PostService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
-@EnableCaching
+@RequiredArgsConstructor
 public class PostController {
     private final PostService postService;
 
-    @Autowired
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
-
     @GetMapping("/posts")
-    @Cacheable(key = "", value = "Posts")
+    @Cacheable("posts")
     public ResponseEntity<?> showAllPostsTest() {
         try {
             return ResponseEntity.ok(postService.showAllPostsTest());
