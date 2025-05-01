@@ -17,7 +17,7 @@ public class FeedbackController {
         try {
             return ResponseEntity.ok(feedbackService.create(feedback));
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("can't create new feedback" + e);
+            return ResponseEntity.badRequest().body("Can't create new feedback" + e);
         }
     }
 
@@ -26,7 +26,7 @@ public class FeedbackController {
         try {
             return ResponseEntity.ok(feedbackService.showAll());
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("can't show feedback");
+            return ResponseEntity.badRequest().body("Can't show feedback");
         }
     }
 }

@@ -8,25 +8,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/posts")
 @RequiredArgsConstructor
 public class PostController {
     private final PostService postService;
 
-    @GetMapping("/posts")
+    @GetMapping
     @Cacheable("posts")
     public ResponseEntity<?> showAllPostsTest() {
         try {
-            return ResponseEntity.ok(postService.showAllPostsTest());
+            return ResponseEntity.ok(postService.showAllPosts());
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body("can't snow ur posts");
+            return ResponseEntity.badRequest().body("Can't download posts");
         }
     }
 
-    @PostMapping("/{nickname}/create")
-    public ResponseEntity<?> createPost(@RequestBody PostEntity post, @PathVariable("nickname") String nickname) {
+    @PostMapping("/{name}/create")
+    public ResponseEntity<?> createPost(@RequestBody PostEntity post, @PathVariable("name") String name) {
         try {
-            postService.addPosts(post, nickname);
+            postService.addPosts(post, name);
             return ResponseEntity.ok("post is created");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("can't create post");

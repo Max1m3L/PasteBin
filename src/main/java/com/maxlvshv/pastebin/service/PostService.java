@@ -23,23 +23,23 @@ public class PostService {
 
     public boolean userIsExist(String name) {
         for (UserEntity el : userRepo.findAll()) {
-            if (el.getNickname().equals(name))
+            if (el.getUsername().equals(name))
                 return true;
         }
         return false;
     }
 
-    public void addPosts(PostEntity post, String nickname) throws UserIsNotExistException {
-        if (userIsExist(nickname)) {
-            UserEntity user = userRepo.findByNickname(nickname);
+    public void addPosts(PostEntity post, String name) throws UserIsNotExistException {
+        if (userIsExist(name)) {
+            UserEntity user = userRepo.findByUsername(name).orElseThrow(null);
             post.setUser(user);
             postRepo.save(post);
         } else {
-            throw new UserIsNotExistException("Can't find user");
+            throw new UserIsNotExistException("Can't find the user: " + name);
         }
     }
 
-    public List<Object> showAllPostsTest() {
-        return postRepo.findAllWithUsers();
+    public List<PostEntity> showAllPosts() {
+        return postRepo.findAll();
     }
 }

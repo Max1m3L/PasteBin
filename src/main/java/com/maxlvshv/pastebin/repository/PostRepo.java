@@ -11,6 +11,6 @@ import java.util.List;
 public interface PostRepo extends JpaRepository<PostEntity, Long> {
     List<PostEntity> findAll();
 
-    @Query("SELECT p.title, p.subtitle, u.nickname FROM PostEntity p INNER JOIN p.user u")
-    List<Object> findAllWithUsers();
+//    @Query("SELECT p.title, p.subtitle, u.name FROM PostEntity p INNER JOIN p.user u")
+//    List<Object> findAllWithUsers();
 }
