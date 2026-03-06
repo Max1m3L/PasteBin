@@ -1,7 +1,7 @@
 package com.maxlvshv.pastebin.controller;
 
 import com.maxlvshv.pastebin.entity.PostEntity;
-import com.maxlvshv.pastebin.service.PostService;
+import com.maxlvshv.pastebin.service.PostServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/posts")
 @RequiredArgsConstructor
 public class PostController {
-    private final PostService postService;
+    private final PostServiceImpl postService;
 
     @GetMapping
     @Cacheable("posts")

@@ -1,7 +1,7 @@
 package com.maxlvshv.pastebin.controller;
 
 import com.maxlvshv.pastebin.entity.Feedback;
-import com.maxlvshv.pastebin.service.FeedbackService;
+import com.maxlvshv.pastebin.service.FeedbackServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/feedbacks")
 @RequiredArgsConstructor
 public class FeedbackController {
-    private final FeedbackService feedbackService;
+    private final FeedbackServiceImpl feedbackService;
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody Feedback feedback) {

@@ -1,8 +1,8 @@
 package com.maxlvshv.pastebin.controller;
 
-import com.maxlvshv.pastebin.dto.JwtAuthenticationResponse;
-import com.maxlvshv.pastebin.dto.SignInRequest;
-import com.maxlvshv.pastebin.dto.SignUpRequest;
+import com.maxlvshv.pastebin.api.JwtAuthenticationResponse;
+import com.maxlvshv.pastebin.api.SignInRequest;
+import com.maxlvshv.pastebin.api.SignUpRequest;
 import com.maxlvshv.pastebin.security.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;

@@ -1,5 +1,10 @@
-package com.maxlvshv.pastebin.dto;
+package com.maxlvshv.pastebin.api;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class JwtAuthenticationResponse {
     private String token;
 

@@ -1,11 +1,10 @@
 package com.maxlvshv.pastebin.security;
 
-import com.maxlvshv.pastebin.dto.JwtAuthenticationResponse;
-import com.maxlvshv.pastebin.dto.SignInRequest;
-import com.maxlvshv.pastebin.dto.SignUpRequest;
+import com.maxlvshv.pastebin.api.JwtAuthenticationResponse;
+import com.maxlvshv.pastebin.api.SignInRequest;
+import com.maxlvshv.pastebin.api.SignUpRequest;
 import com.maxlvshv.pastebin.entity.Role;
 import com.maxlvshv.pastebin.entity.UserEntity;
-import com.maxlvshv.pastebin.exceptions.UserAlreadyExistException;
 import com.maxlvshv.pastebin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
